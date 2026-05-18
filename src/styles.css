@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: theme('fontFamily.sans');
+  }
+
+  ::selection {
+    background: rgba(31, 122, 236, 0.22);
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-bold text-slate-600 transition hover:text-azure dark:text-slate-200 dark:hover:text-mint;
+  }
+
+  .nav-link-active {
+    @apply text-azure dark:text-mint;
+  }
+
+  .icon-button {
+    @apply grid h-11 w-11 place-items-center rounded-lg border border-line bg-white text-ink transition hover:-translate-y-0.5 hover:border-azure hover:text-azure dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:text-mint;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center gap-2 rounded-lg bg-azure px-6 py-4 text-sm font-black text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#1768cf] focus:outline-none focus:ring-4 focus:ring-azure/25;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center gap-2 rounded-lg border border-line bg-white px-6 py-4 text-sm font-black text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-azure hover:text-azure dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:text-mint;
+  }
+
+  .eyebrow {
+    @apply text-sm font-black uppercase tracking-[0.18em] text-azure dark:text-mint;
+  }
+
+  .section-title {
+    @apply mt-3 font-display text-3xl font-black leading-tight tracking-normal text-ink dark:text-white sm:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300;
+  }
+
+  .info-card,
+  .service-card,
+  .choose-card,
+  .testimonial-card,
+  .project-card {
+    @apply rounded-lg border border-line bg-white shadow-sm transition duration-300 dark:border-white/10 dark:bg-white/5;
+  }
+
+  .info-card {
+    @apply p-7 shadow-soft;
+  }
+
+  .service-card {
+    @apply overflow-hidden hover:-translate-y-1 hover:border-azure/40 hover:shadow-soft;
+  }
+
+  .choose-card {
+    @apply p-6 text-center hover:-translate-y-1 hover:shadow-soft;
+  }
+
+  .testimonial-card {
+    @apply p-7 shadow-soft;
+  }
+
+  .project-card {
+    @apply overflow-hidden shadow-soft hover:-translate-y-1;
+  }
+
+  .card-title {
+    @apply font-display text-xl font-black tracking-normal text-ink dark:text-white;
+  }
+
+  .card-copy {
+    @apply mt-3 leading-7 text-slate-600 dark:text-slate-300;
+  }
+
+  .service-icon {
+    @apply mb-6 grid place-items-center rounded-lg bg-azure/10 text-azure dark:bg-mint/10 dark:text-mint;
+    height: 3.25rem;
+    width: 3.25rem;
+  }
+
+  .service-image-wrap {
+    @apply relative aspect-[16/10] overflow-hidden bg-white;
+  }
+
+  .service-image {
+    @apply h-full w-full object-cover transition duration-500;
+  }
+
+  .service-card:hover .service-image {
+    transform: scale(1.06);
+  }
+
+  .service-image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent;
+  }
+
+  .about-image-wrap {
+    @apply mb-6 overflow-hidden rounded-lg bg-white;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-image {
+    @apply h-full w-full object-cover transition duration-500;
+  }
+
+  .info-card:hover .about-image {
+    transform: scale(1.04);
+  }
+
+  .tech-panel {
+    @apply relative overflow-hidden rounded-lg border border-white/10 bg-ink p-6 shadow-glow dark:bg-[#0b2551] sm:p-8;
+  }
+
+  .hero-image-wrap {
+    @apply relative mb-7 overflow-hidden rounded-lg border border-white/10;
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero-image {
+    @apply h-full w-full object-cover;
+  }
+
+  .hero-image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 22, 47, 0.08), rgba(7, 22, 47, 0.62));
+    pointer-events: none;
+  }
+
+  .hero-image-badge {
+    @apply absolute bottom-4 left-4 z-10 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/15 px-4 py-2 text-sm font-black text-white backdrop-blur;
+  }
+
+  .tech-panel::before {
+    content: '';
+    position: absolute;
+    inset: -40% -20% auto auto;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(39, 211, 162, 0.36), transparent 62%);
+    pointer-events: none;
+  }
+
+  .project-visual {
+    @apply relative grid aspect-[16/10] place-items-center overflow-hidden bg-[linear-gradient(135deg,#07162f,#1f7aec_55%,#27d3a2)] text-white;
+  }
+
+  .project-visual span {
+    @apply relative z-10 rounded-lg border border-white/20 bg-white/15 px-4 py-2 text-sm font-black backdrop-blur;
+  }
+
+  .project-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 22, 47, 0.08), rgba(7, 22, 47, 0.62));
+    pointer-events: none;
+  }
+
+  .project-image {
+    @apply absolute inset-0 h-full w-full object-cover transition duration-500;
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.06);
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-line bg-white px-4 py-4 text-sm font-semibold text-ink outline-none transition placeholder:text-slate-400 focus:border-azure focus:ring-4 focus:ring-azure/15 dark:border-white/10 dark:bg-white/10 dark:text-white dark:placeholder:text-slate-400;
+  }
+
+  .contact-row {
+    @apply flex items-center gap-3 rounded-lg border border-line p-4 font-bold text-slate-700 dark:border-white/10 dark:text-slate-200;
+  }
+
+  .footer-link {
+    @apply text-sm text-white/70 transition hover:text-white;
+  }
+}
