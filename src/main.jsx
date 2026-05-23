@@ -38,7 +38,6 @@ const navItems = [
   ['About', 'about'],
   ['Services', 'services'],
   ['Projects', 'projects'],
-  ['Testimonials', 'testimonials'],
   ['FAQ', 'faq'],
   ['Contact', 'contact'],
 ];
@@ -136,27 +135,6 @@ const aboutCards = [
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      'ANU SOLS LTD brought clarity to our product roadmap and delivered a clean web platform that our team could scale with confidence.',
-    name: 'Priya N.',
-    role: 'Founder, SaaS Startup',
-  },
-  {
-    quote:
-      'Professional, responsive, and technically sharp. The project felt organised from discovery through launch.',
-    name: 'James W.',
-    role: 'Director, UK Retail Business',
-  },
-  {
-    quote:
-      'Their design-first approach helped us modernise our customer experience without overcomplicating the technology.',
-    name: 'Amina K.',
-    role: 'Operations Lead',
-  },
-];
-
 const faqs = [
   {
     q: 'Do you work with startups and small businesses?',
@@ -198,11 +176,6 @@ const pageTitles = {
     eyebrow: 'Projects',
     title: 'Project examples with a polished technology focus.',
     copy: 'A showcase of sample digital products, platforms, and operational tools that reflect the company’s delivery style.',
-  },
-  testimonials: {
-    eyebrow: 'Testimonials',
-    title: 'Client confidence through clear delivery.',
-    copy: 'Professional feedback examples designed to build credibility and communicate the experience clients can expect.',
   },
   faq: {
     eyebrow: 'FAQ',
@@ -356,31 +329,6 @@ function StandalonePage({ page }) {
                   <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm font-black text-azure">
                     Discuss similar work <ArrowRight size={16} />
                   </a>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Section>
-      </PageShell>
-    );
-  }
-
-  if (page === 'testimonials') {
-    return (
-      <PageShell page="testimonials">
-        <Section>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {testimonials.map((item, index) => (
-              <Reveal key={item.name} delay={index * 0.08} className="testimonial-card">
-                <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">"{item.quote}"</p>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-azure to-mint font-black text-white">
-                    {item.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-black">{item.name}</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">{item.role}</p>
-                  </div>
                 </div>
               </Reveal>
             ))}
@@ -728,30 +676,6 @@ function App() {
                   <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm font-black text-azure">
                     Discuss similar work <ArrowRight size={16} />
                   </a>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          id="testimonials"
-          eyebrow="Testimonials"
-          title="Professional relationships built on trust."
-          copy="Realistic client feedback style for a polished, credibility-building launch website."
-        >
-          <div className="grid gap-6 lg:grid-cols-3">
-            {testimonials.map((item, index) => (
-              <Reveal key={item.name} delay={index * 0.08} className="testimonial-card">
-                <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">"{item.quote}"</p>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-azure to-mint font-black text-white">
-                    {item.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-black">{item.name}</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">{item.role}</p>
-                  </div>
                 </div>
               </Reveal>
             ))}
